@@ -3216,9 +3216,9 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             no_audio = dct.get('acodec') == 'none'
             no_video = dct.get('vcodec') == 'none'
             if no_audio:
-                dct['vbr'] = 192#tbr
+                dct['vbr'] = 192  #tbr
             if no_video:
-                dct['abr'] = 192#int(tbr)
+                dct['abr'] = 192  #int(tbr)
             if no_audio or no_video:
                 dct['downloader_options'] = {
                     # Youtube throttles chunks >~10M
