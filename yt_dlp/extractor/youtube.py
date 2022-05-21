@@ -1162,7 +1162,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
                 'uploader': 'AfrojackVEVO',
                 'uploader_id': 'AfrojackVEVO',
                 'upload_date': '20131011',
-                'abr': 129.495,
+                'abr': 129,
                 'like_count': int,
                 'channel_id': 'UChuZAo1RKL85gev3Eal9_zg',
                 'playable_in_embed': True,
@@ -3216,9 +3216,9 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
             no_audio = dct.get('acodec') == 'none'
             no_video = dct.get('vcodec') == 'none'
             if no_audio:
-                dct['vbr'] = tbr
+                dct['vbr'] = 192#tbr
             if no_video:
-                dct['abr'] = tbr
+                dct['abr'] = 192#int(tbr)
             if no_audio or no_video:
                 dct['downloader_options'] = {
                     # Youtube throttles chunks >~10M
